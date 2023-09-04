@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Science On The Go!</title>
+    <link rel="stylesheet" href="styleSheet.css">
+</head>
+
+<body>
+    <logo class="logo">
+        <center>
+            <big style="color:MediumSeaGreen;">
+			<a href="index.html">
+                Science On The Go!<br><br>
+			</a>
+            </big>
+        </center>
+    </logo>
+
+    <div class="menu-bar">
+        <hr>
+            <div class="active">          
+					<img src="images\2.jpg" width="200px" height="330px" class="left-aligned">
+                <h3>
+                        <b>
+                            <center style="font-size:80%; text-align: left;">
+                                Hot Air: The Inside Story of the Battle Against Climate Change Denial  <br>
+									<u>
+										by Peter Scott<br><br>
+									</u>
+									
+									
+                            </center>
+                        </b>
+                </h3>
+                        <center style="font-size:90%; text-align: left;">
+                           <b> ***SHORTLISTED FOR THE ROYAL SOCIETY SCIENCE BOOK PRIZE 2022***<br><br>
+
+								***SHORTLISTED FOR THE RSL CHRISTOPHER BLAND PRIZE 2022***<br><br>
+								'Fascinating... timely, understandable and informative' Forbes <br><br>
+						   </b>
+								Ours is the age of global warming. Rising sea levels, extreme weather, forest fires. 
+								Dire warnings are everywhere, so why has it taken so long for the crisis to be recognised?
+
+								Here, for the first time, climate scientist Peter Stott reveals the bitter fight to get international 
+								recognition for what, among scientists, has been known for decades: human activity causes climate change. 
+								Across continents and against the efforts of sceptical governments, prominent climate change deniers and shadowy lobbyists, 
+								Hot Air is the urgent story of how the science was developed, how it has been repeatedly sabotaged and why humanity hasn't a second 
+								to spare in the fight to halt climate change.<br><br><br>
+									
+                        </center>
+            </div>
+        <hr>
+    </div>
+	
+
+    <form id="purchaseForm">
+		<div class="container">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name"><br><br>
+        
+			<label for="address">Address:</label>
+			<input type="text" id="address" name="address"><br><br>
+        
+			<button type="button" id="purchaseButton" class="button button1">Purchase</button>
+		</div>
+    </form>
+	
+    <script>
+        document.getElementById("purchaseButton").addEventListener("click", function() {
+            // Get the name and address from the form
+            const name = document.getElementById("name").value;
+            const address = document.getElementById("address").value;
+
+            // Create the popup message
+            const message = `${name} thank you for your purchase!`;
+
+            // Show the popup
+            alert(message);
+        });
+    </script>
+	<br><br><br><br><br><br><br>
+	
+	<div id="reviews">
+	
+		<div class="review-box">
+			This is the first review.
+		</div>
+		<div class="review-box">
+			This is the second review.
+		</div>
+		
+	</div>
+		
+	<div class="container">
+			<textarea id="newReview" placeholder="Enter your review" rows="10" cols="50"></textarea><br><br>
+			<button id="addReview" class="button button1">Add Review</button>
+	</div>
+	
+		<script>
+			function addReview() {
+				// Get the text from the input field
+				const reviewText = document.getElementById("newReview").value;
+
+				if (reviewText.trim() === "") {
+					// Don't add empty reviews
+					alert("Please enter a review.");
+					return;
+				}
+
+				// Create a new review element
+				const newReviewElement = document.createElement("div");
+				newReviewElement.className = "review-box";
+				newReviewElement.textContent = reviewText;
+							
+				const lineBreak = document.createElement("br");
+				newReviewElement.appendChild(lineBreak);
+
+				// Append the new review to the reviews container
+				const reviewsContainer = document.getElementById("reviews");
+				reviewsContainer.appendChild(newReviewElement);
+
+				// Clear the input field
+				document.getElementById("newReview").value = "";
+			}
+
+			// Add an event listener to the "Add Review" button
+			document.getElementById("addReview").addEventListener("click", addReview);
+		</script>
+</body>
+
+</html>

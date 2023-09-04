@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Science On The Go!</title>
+    <link rel="stylesheet" href="styleSheet.css">
+</head>
+
+<body>
+    <logo class="logo">
+        <center>
+            <big style="color:MediumSeaGreen;">
+			<a href="index.html">
+                Science On The Go!<br><br>
+			</a>
+            </big>
+        </center>
+    </logo>
+
+    <div class="menu-bar">
+        <hr>
+            <div class="active">          
+					<img src="images\3.jpg" width="200px" height="300px" class="left-aligned">
+                <h3>
+                        <b>
+                            <center style="font-size:80%; text-align: left;">
+                                Spike: The Virus vs. The People - the Inside Story <br>
+									<u>
+										by Jeremy Farrar, Anjana Ahuja<br><br>
+									</u>
+									
+									
+                            </center>
+                        </b>
+                </h3>
+                        <center style="font-size:90%; text-align: left;">
+                           <b> THE TIMES SCIENCE BOOK OF THE YEAR<br>
+								A GUARDIAN BEST POLITICS BOOK OF THE YEAR<br>
+								A TOP 5 SUNDAY TIMES BESTSELLER<br><br>
+
+								A pulse-racing journey through the science and politics of the pandemic. 
+								Did the UK government really 'follow the science' throughout the Covid-19 pandemic, as it claims?<br><br>
+						   </b>
+								The Coronavirus pandemic has devastated lives and livelihoods around the world - and continues to do so. 
+								These personal tragedies will, and must, be told and heard. 
+								There is, however, also a truthful and objective scientific narrative to be written 
+								about how the virus played out and how the world set about dealing with it. 
+								Spike is that story - from the inside. Its author, Jeremy Farrar, is one of the UK's leading 
+								scientists and a member of the SAGE emergency committee.
+
+								As head of the Wellcome Trust, and an expert in emerging infectious diseases, 
+								Jeremy Farrar was one of the first people in the world to hear about a mysterious new respiratory 
+								disease in China - and to learn that it could readily spread between people. Farrar describes how it 
+								feels as one of the key scientists at the sharp end of a fast-moving situation, when complex decisions must 
+								be made quickly amid great uncertainty. His book casts light on the UK government's claims 
+								to be 'following the science' in its response to the virus, and is informed not just by 
+								Farrar's views but by interviews with other top scientists and political figures.
+									
+                        </center>
+            </div>
+        <hr>
+    </div>
+	
+
+    <form id="purchaseForm">
+		<div class="container">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name"><br><br>
+        
+			<label for="address">Address:</label>
+			<input type="text" id="address" name="address"><br><br>
+        
+			<button type="button" id="purchaseButton" class="button button1">Purchase</button>
+		</div>
+    </form>
+	
+    <script>
+        document.getElementById("purchaseButton").addEventListener("click", function() {
+            // Get the name and address from the form
+            const name = document.getElementById("name").value;
+            const address = document.getElementById("address").value;
+
+            // Create the popup message
+            const message = `${name} thank you for your purchase!`;
+
+            // Show the popup
+            alert(message);
+        });
+    </script>
+	<br><br><br><br><br><br><br>
+	
+	<div id="reviews">
+	
+		<div class="review-box">
+			This is the first review.
+		</div>
+		<div class="review-box">
+			This is the second review.
+		</div>
+		
+	</div>
+		
+	<div class="container">
+			<textarea id="newReview" placeholder="Enter your review" rows="10" cols="50"></textarea><br><br>
+			<button id="addReview" class="button button1">Add Review</button>
+	</div>
+	
+		<script>
+			function addReview() {
+				// Get the text from the input field
+				const reviewText = document.getElementById("newReview").value;
+
+				if (reviewText.trim() === "") {
+					// Don't add empty reviews
+					alert("Please enter a review.");
+					return;
+				}
+
+				// Create a new review element
+				const newReviewElement = document.createElement("div");
+				newReviewElement.className = "review-box";
+				newReviewElement.textContent = reviewText;
+							
+				const lineBreak = document.createElement("br");
+				newReviewElement.appendChild(lineBreak);
+
+				// Append the new review to the reviews container
+				const reviewsContainer = document.getElementById("reviews");
+				reviewsContainer.appendChild(newReviewElement);
+
+				// Clear the input field
+				document.getElementById("newReview").value = "";
+			}
+
+			// Add an event listener to the "Add Review" button
+			document.getElementById("addReview").addEventListener("click", addReview);
+		</script>
+</body>
+
+</html>

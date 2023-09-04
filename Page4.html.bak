@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Science On The Go!</title>
+    <link rel="stylesheet" href="styleSheet.css">
+</head>
+
+<body>
+    <logo class="logo">
+        <center>
+            <big style="color:MediumSeaGreen;">
+			<a href="index.html">
+                Science On The Go!<br><br>
+			</a>
+            </big>
+        </center>
+    </logo>
+
+    <div class="menu-bar">
+        <hr>
+            <div class="active">          
+					<img src="images\4.jpg" alt="Check URL" width="200px" height="300px" class="left-aligned">
+                <h3>
+                        <b>
+                            <center style="font-size:80%; text-align: left;">
+                                A (Very) Short History of Life on Earth: 4.6 Billion Years in 12 Pithy Chapters <br>
+									<u>
+										by Henry Gee<br>
+									</u>
+									
+									
+                            </center>
+                        </b>
+                </h3>
+                        <center style="font-size:90%; text-align: left;">
+                           <b> The Royal Society's Science Book of the Year<br><br>
+
+								"[A]n exuberant romp through evolution, like a modern-day Willy Wonka of genetic space. 
+								Gee's grand tour enthusiastically details the narrative underlying life's erratic and often whimsical 
+								exploration of biological form and function." --Adrian Woolfson, The Washington Post<br><br>
+								
+						   </b>
+								In the tradition of Richard Dawkins, Bill Bryson, 
+								and Simon Winchester--An entertaining and uniquely informed narration of Life's life story.
+								n the beginning, Earth was an inhospitably alien place--in constant chemical flux, covered 
+								with churning seas, crafting its landscape through incessant volcanic eruptions.
+								Amid all this tumult and disaster, life began. The earliest living things were 
+								no more than membranes stretched across microscopic gaps in rocks, where boiling 
+								hot jets of mineral-rich water gushed out from cracks in the ocean floor. 
+								
+								Although these membranes were leaky, the environment within them became different from the raging maelstrom beyond. 
+								These havens of order slowly refined the generation of energy, using it to form membrane-bound bubbles 
+								that were mostly-faithful copies of their parents--a foamy lather of soap-bubble cells standing as 
+								tiny clenched fists, defiant against the lifeless world. 
+								Life on this planet has continued in much the same way for millennia, adapting to literally every 
+								conceivable setback that living organisms could encounter and thriving, from these humblest beginnings 
+								to the thrilling and unlikely story of ourselves. 
+									
+                        </center>
+            </div>
+        <hr>
+    </div>
+	
+
+    <form id="purchaseForm">
+		<div class="container">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name"><br><br>
+        
+			<label for="address">Address:</label>
+			<input type="text" id="address" name="address"><br><br>
+        
+			<button type="button" id="purchaseButton" class="button button1">Purchase</button>
+		</div>
+    </form>
+	
+    <script>
+        document.getElementById("purchaseButton").addEventListener("click", function() {
+            // Get the name and address from the form
+            const name = document.getElementById("name").value;
+            const address = document.getElementById("address").value;
+
+            // Create the popup message
+            const message = `${name} thank you for your purchase!`;
+
+            // Show the popup
+            alert(message);
+        });
+    </script>
+	<br><br><br><br><br><br><br>
+	
+	<div id="reviews">
+	
+		<div class="review-box">
+			This is the first review.
+		</div>
+		<div class="review-box">
+			This is the second review.
+		</div>
+		
+	</div>
+		
+	<div class="container">
+			<textarea id="newReview" placeholder="Enter your review" rows="10" cols="50"></textarea><br><br>
+			<button id="addReview" class="button button1">Add Review</button>
+	</div>
+	
+		<script>
+			function addReview() {
+				// Get the text from the input field
+				const reviewText = document.getElementById("newReview").value;
+
+				if (reviewText.trim() === "") {
+					// Don't add empty reviews
+					alert("Please enter a review.");
+					return;
+				}
+
+				// Create a new review element
+				const newReviewElement = document.createElement("div");
+				newReviewElement.className = "review-box";
+				newReviewElement.textContent = reviewText;
+							
+				const lineBreak = document.createElement("br");
+				newReviewElement.appendChild(lineBreak);
+
+				// Append the new review to the reviews container
+				const reviewsContainer = document.getElementById("reviews");
+				reviewsContainer.appendChild(newReviewElement);
+
+				// Clear the input field
+				document.getElementById("newReview").value = "";
+			}
+
+			// Add an event listener to the "Add Review" button
+			document.getElementById("addReview").addEventListener("click", addReview);
+		</script>
+</body>
+
+</html>

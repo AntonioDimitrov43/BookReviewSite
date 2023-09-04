@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Science On The Go!</title>
+    <link rel="stylesheet" href="styleSheet.css">
+</head>
+
+<body>
+    <logo class="logo">
+        <center>
+            <big style="color:MediumSeaGreen;">
+			<a href="index.html">
+                Science On The Go!<br><br>
+			</a>
+            </big>
+        </center>
+    </logo>
+
+    <div class="menu-bar">
+        <hr>
+            <div class="active">          
+					<img src="images\1.jpg" width="200px" height="300px" class="left-aligned">
+                <h3>
+                        <b>
+                            <center style="font-size:80%; text-align: left;">
+                                The Greywacke: How a Priest, a Soldier and a School Teacher Uncovered 300 Million Years of History <br>
+									<u>
+										by Nick Davidson<br><br>
+									</u>
+									
+									
+                            </center>
+                        </b>
+                </h3>
+                        <center style="font-size:90%; text-align: left;">
+                           <b> SHORTLISTED FOR THE ROYAL SOCIETY SCIENCE PRIZE 2022<br><br>
+								'A joyful collision of science, history and nature writing' Helen Gordon, author of Notes from Deep Time<br><br>
+						   </b>
+								Adam Sedgwick was a priest and scholar. 
+								Roderick Murchison was a retired soldier. 
+								Charles Lapworth was a schoolteacher. 
+								It was their personal and intellectual rivalry, pursued on treks through Wales, Scotland, 
+								Cornwall, Devon and parts of western Russia, that revealed the narrative structure of the Paleozoic Era, 
+								the 300-million-year period during which life on Earth became recognisably itself.<br><br>
+
+								Nick Davidson follows in their footsteps and draws on maps, diaries, letters, field notes and contemporary accounts to bring the ideas and characters alive. 
+								But this is more than a history of geology. 
+								As we travel through some of the most spectacular scenery in Britain, it's a celebration of the sheer 
+								visceral pleasure generations of geologists have found, and continue to find, in noticing the earth beneath our feet.
+									
+                        </center>
+            </div>
+        <hr>
+    </div>
+	
+
+    <form id="purchaseForm">
+		<div class="container">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name"><br><br>
+        
+			<label for="address">Address:</label>
+			<input type="text" id="address" name="address"><br><br>
+        
+			<button type="button" id="purchaseButton" class="button button1">Purchase</button>
+		</div>
+    </form>
+	
+    <script>
+        document.getElementById("purchaseButton").addEventListener("click", function() {
+            // Get the name and address from the form
+            const name = document.getElementById("name").value;
+            const address = document.getElementById("address").value;
+
+            // Create the popup message
+            const message = `${name} thank you for your purchase!`;
+
+            // Show the popup
+            alert(message);
+        });
+    </script>
+	<br><br><br><br><br><br><br>
+	
+	<div id="reviews">
+	
+		<div class="review-box">
+			This is the first review.
+		</div>
+		<div class="review-box">
+			This is the second review.
+		</div>
+		
+	</div>
+		
+	<div class="container">
+			<textarea id="newReview" placeholder="Enter your review" rows="10" cols="50"></textarea><br><br>
+			<button id="addReview" class="button button1">Add Review</button>
+	</div>
+	
+		<script>
+			function addReview() {
+				// Get the text from the input field
+				const reviewText = document.getElementById("newReview").value;
+
+				if (reviewText.trim() === "") {
+					// Don't add empty reviews
+					alert("Please enter a review.");
+					return;
+				}
+
+				// Create a new review element
+				const newReviewElement = document.createElement("div");
+				newReviewElement.className = "review-box";
+				newReviewElement.textContent = reviewText;
+							
+				const lineBreak = document.createElement("br");
+				newReviewElement.appendChild(lineBreak);
+
+				// Append the new review to the reviews container
+				const reviewsContainer = document.getElementById("reviews");
+				reviewsContainer.appendChild(newReviewElement);
+
+				// Clear the input field
+				document.getElementById("newReview").value = "";
+			}
+
+			// Add an event listener to the "Add Review" button
+			document.getElementById("addReview").addEventListener("click", addReview);
+		</script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.review-box {
+            background-color: rgb(127, 67, 50);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #ccc;
+}
+
+.container {
+            text-align: center;
+        }
+        #name,
+        #address,
+        #purchaseButton {
+            margin: 5px;
+}
+
+.logo {
+    color: white;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background: url(mainBackground.png);
+    background-size: auto;
+    background-position: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-bar {
+    background-color: rgb(87, 67, 50);
+    text-align: center;
+    float: inline-end;
+    font-size: larger;
+}
+
+.menu-bar ul {
+    list-style: none;
+}
+
+.menu-bar ul li {
+    width: 1650px;
+    margin: 15px;
+    padding: 1px;
+}
+
+.cat {
+    width: 700px;
+    height: 650px;
+    margin-top: 10px;
+    display: flex;
+    margin: 50px;
+}
+
+.items {
+    margin: 40px;
+    width: 300px;
+    height: 600px;
+    box-shadow: -5px 0 10px black;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.left-aligned {
+    float: left;
+    margin-right: 10px;
+}
